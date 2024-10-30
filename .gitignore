@@ -53,3 +53,9 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+
+# NOT READY
+/src/apps
+/src/routes
+/src/routeTree.gen.ts
