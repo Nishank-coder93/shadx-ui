@@ -2,20 +2,16 @@ import * as React from "react"
 import {
   AudioWaveform,
   BookOpen,
-  Bot,
   Command,
   Frame,
+  PiggyBank,
   GalleryVerticalEnd,
-  Map,
-  PieChart,
   Settings2,
   LayoutDashboard,
 } from "lucide-react"
 
 import { NavMain } from "@/components/layout/LayoutWithSidebar/Sidebar/nav-main"
-import { NavProjects } from "@/components/layout/LayoutWithSidebar/Sidebar/nav-projects"
 import { NavUser } from "@/components/layout/LayoutWithSidebar/Sidebar/nav-user"
-import { TeamSwitcher } from "@/components/layout/LayoutWithSidebar/Sidebar/team-switcher"
 import {
   Sidebar,
   SidebarContent,
@@ -56,84 +52,11 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "Dashboard",
+          title: "Feed",
           url: "/",
         },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
       ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "Profile",
-          url: "/settings/profile",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
+    }
   ],
   projects: [
     {
@@ -141,29 +64,20 @@ const data = {
       url: "#",
       icon: Frame,
     },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
   ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <span> Company Name</span>
+      <SidebarHeader className="flex flex-row items-center gap-3 px-4 py-2">
+        <BookOpen size={20} />
+        <span className="hidden"> Company Name</span>
         {/* <TeamSwitcher teams={data.teams} /> */}
       </SidebarHeader>
       <SidebarContent>
-        <NavMain items={data.navMain} />
         {/* <NavProjects projects={data.projects} /> */}
+        <NavMain items={data.navMain} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

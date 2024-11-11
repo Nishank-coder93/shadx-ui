@@ -10,9 +10,11 @@ const LayoutWithSidebar = () => {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
+      <SidebarInset className='bg-gradient-to-r from-purple-400/25 via-pink-500/25 to-red-500/25'>
         <TopNavBar search={true} avatarWithDropdown={true} />
-        <Outlet />  {/* This is where the routed component will be rendered */}
+        <div className="h-full">
+            <Outlet />  {/* This is where the routed component will be rendered */}  
+        </div>
       </SidebarInset>
     </SidebarProvider>
     // <div className="grid min-h-screen w-full grid-cols-[1fr] sm:grid-cols-[60px_1fr] md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] border-solid border-50 border-black">
